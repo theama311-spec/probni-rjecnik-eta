@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Probni digitalni grčko-hrvatski rječnik">
+<title>Probni rječnik 02</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><h1>Probni rječnik 02</h1><p class="subtitle">Sređene natuknice · radna verzija</p></div>
+  <div class="tools">
+    <button id="themeBtn" title="Promijeni temu">Tema</button>
+    <button id="exportBtn">Izvoz JSON</button>
+    <label class="button" for="importFile">Uvoz JSON</label><input id="importFile" type="file" accept=".json,application/json" hidden>
+  </div>
+</header>
+<main>
+  <section id="listView">
+    <div class="searchrow">
+      <input id="search" type="search" placeholder="Pretraži grčki ili hrvatski tekst…" autocomplete="off">
+      <button id="clearBtn">Očisti</button>
+    </div>
+    <nav id="alphabet" aria-label="Grčki alfabet"></nav>
+    <div class="listbar">
+      <span id="count"></span>
+      <div><button id="fontDown">A−</button><button id="fontReset">A</button><button id="fontUp">A+</button></div>
+    </div>
+    <ol id="entriesList" class="entries-list"></ol>
+  </section>
+  <section id="entryView" hidden>
+    <div class="entry-actions">
+      <button id="backEntry">← Natuknica</button>
+      <button id="backList">← Popis</button>
+      <button id="backAlpha">← Alfabet</button>
+      <span class="spacer"></span>
+      <button id="prevBtn">← Prethodna</button><button id="nextBtn">Sljedeća →</button>
+    </div>
+    <article class="entry-card">
+      <div class="entry-meta" id="entryMeta"></div>
+      <h2 id="entryTitle"></h2>
+      <div id="entryText" class="entry-text"></div>
+      <div class="edit-actions"><button id="editBtn">Uredi</button><button id="saveBtn" hidden>Spremi</button><button id="cancelBtn" hidden>Odustani</button></div>
+      <textarea id="editor" hidden aria-label="Uredi tekst natuknice"></textarea>
+    </article>
+  </section>
+</main>
+<footer>Probna aplikacija · izmjene se čuvaju u ovom pregledniku; izvezite JSON za sigurnosnu kopiju.</footer>
+<script src="app.js"></script>
+</body>
+</html>
